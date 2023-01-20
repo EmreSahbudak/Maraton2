@@ -9,9 +9,9 @@ import java.util.List;
 
 public class MusteriService {
     public static void main(String[] args) {
-        //getAllMusteri();
+        getAllMusteri();
         //siparisAdedi();
-        musteriAdSoyad();
+        //musteriAdSoyad();
     }
     static MusteriDao musteriDao=new MusteriDao();
 
@@ -22,7 +22,7 @@ public class MusteriService {
             System.out.println("ID: "+item.getId()+" Müşteri Adı: "+item.getAd()
                     +" Müşteri Soyadı:"+item.getSoyad());
             for (Siparis item2:item.getSiparisList()){
-                System.out.println("Sipariş Id deneme: "+item2.getId());
+                System.out.println("Sipariş Id: "+item2.getId());
                 for (SiparisKalemi item3: item2.getSiparisKalemiList()){
                     System.out.println("Ürün: "+item3.getUrun().getUrunAdi()+" Fiyat: "+item3.getUrun().getFiyat()
                             +" Adet Sayısı: "+item3.getAdet());
