@@ -29,7 +29,6 @@ public class SiparisDao {
             session.beginTransaction();
             list=session.createQuery("select siparis from Siparis siparis").list();
             session.getTransaction().commit();
-            System.out.println(list+"siparisdao listte bişey var mı");
         }catch (Exception e){
             System.out.println(e.getMessage());
         }

@@ -17,7 +17,6 @@ public class MusteriDao {
                 session.beginTransaction();
                 list=session.createQuery("select musteri from Musteri musteri").list();
                 session.getTransaction().commit();
-
             }catch (Exception e){
                 System.out.println(e.getMessage());
             }

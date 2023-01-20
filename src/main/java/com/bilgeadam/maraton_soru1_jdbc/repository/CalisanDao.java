@@ -3,7 +3,10 @@ package com.bilgeadam.maraton_soru1_jdbc.repository;
 import com.bilgeadam.maraton_soru1_jdbc.entity.Calisan;
 import com.bilgeadam.maraton_soru1_jdbc.entity.Sirket;
 import com.bilgeadam.maraton_soru1_jdbc.util.DB;
+import com.bilgeadam.maraton_soru2_hibernate.util.HibernateUtil;
+import org.hibernate.Session;
 
+import javax.persistence.Query;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -82,6 +85,14 @@ public class CalisanDao {
             preparedStatement.executeUpdate();
             System.out.println(id+". li kayıt update edildi.(calisanDao)");
             preparedStatement.close();
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    public void update2(Calisan calisan){
+        try{
+            Session session= HibernateUtil.getSessionFactory().openSession();
+
         }catch (Exception e){
             System.out.println(e.getMessage());
         }

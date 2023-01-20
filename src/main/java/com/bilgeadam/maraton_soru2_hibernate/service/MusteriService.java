@@ -9,7 +9,7 @@ import java.util.List;
 
 public class MusteriService {
     public static void main(String[] args) {
-        //getAllMusteri();
+        getAllMusteri();
         //siparisAdedi();
         //musteriAdSoyad();
     }
@@ -19,14 +19,14 @@ public class MusteriService {
         List<Musteri> musteriList=musteriDao.getAllMusteri();
         int toplam=0;
         for (Musteri item: musteriList){
-            System.out.println("ID: "+item.getId()+" Müşteri: "+item.getAd()
-                    +item.getSoyad());
+            System.out.println("ID: "+item.getId()+" Müşteri Adı: "+item.getAd()
+                    +" Müşteri Soyadı:"+item.getSoyad());
             for (Siparis item2:item.getSiparisList()){
+                System.out.println("Sipariş Id deneme: "+item2.getId());
                 for (SiparisKalemi item3: item2.getSiparisKalemiList()){
-                    System.out.println("Sipariş Id: "+item2.getId()+
-                            "Ürün: "+item3.getUrun().getUrunAdi()+" Fiyat: "+item3.getUrun().getFiyat()
+                    System.out.println("Ürün: "+item3.getUrun().getUrunAdi()+" Fiyat: "+item3.getUrun().getFiyat()
                             +" Adet Sayısı: "+item3.getAdet());
-                    toplam=item3.getUrun().getFiyat();
+                    toplam=toplam+item3.getUrun().getFiyat();
             }
             System.out.println("Sipariş Toplam:"+toplam );
         }

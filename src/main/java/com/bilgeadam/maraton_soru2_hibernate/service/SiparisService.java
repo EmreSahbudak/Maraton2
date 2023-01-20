@@ -56,10 +56,11 @@ public class SiparisService {
         for (Siparis item: siparisList){
             System.out.println("ID: "+item.getId()+" Müşteri: "+item.getMusteri().getAd()
                     +item.getMusteri().getSoyad()+" Musteri ID: "+item.getMusteri().getId());
+
             for (SiparisKalemi item2:item.getSiparisKalemiList()){
                 System.out.println("Ürün: "+item2.getUrun().getUrunAdi()+" Fiyat: "+item2.getUrun().getFiyat()
                 +" Adet Sayısı: "+item2.getAdet());
-                toplam=item2.getUrun().getFiyat();
+                toplam=toplam+item2.getUrun().getFiyat();
             }
             System.out.println("Sipariş Toplam:"+toplam );
         }
