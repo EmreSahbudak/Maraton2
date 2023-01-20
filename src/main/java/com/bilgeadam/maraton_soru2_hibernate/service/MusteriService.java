@@ -9,9 +9,9 @@ import java.util.List;
 
 public class MusteriService {
     public static void main(String[] args) {
-        getAllMusteri();
+        //getAllMusteri();
         //siparisAdedi();
-        //musteriAdSoyad();
+        musteriAdSoyad();
     }
     static MusteriDao musteriDao=new MusteriDao();
 
